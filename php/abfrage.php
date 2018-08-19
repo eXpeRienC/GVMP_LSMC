@@ -57,8 +57,12 @@ switch($error){
         $error_txt = "Erfolgreich ausgeloggt!";
         $error_style = "alert-success";
     break;
+    case 'Code04':
+        $error_txt = "Kein Zugang zu dieser Seite!";
+        $error_style = "alert-danger";
+    break;
     default:
-        $error_txt = "Derzeit ist der Login ohne Funktion!";
+        $error_txt = "";
         $error_style = "alert-primary";
     break;
 }
