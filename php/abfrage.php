@@ -1,6 +1,12 @@
 <?php
 // Setzen fürs debuggen und Ausgeben bestimmter Fehlermeldungen
-$debug = false;
+if(isset($_GET['debug']) && $_GET['debug']){
+    $debug = true;
+} else {
+    $debug = false;
+}
+
+
 
 // Binde die Datenbank ein
 include("database.php");
@@ -60,6 +66,16 @@ if(isset($_GET['logout']) && $_GET['logout'] == true){
 switch($site){
     case 'login':
         check_login($db, $_POST['inputicname'], $_POST['inputpassword']);
+    break;
+    case 'Uebersicht':
+        $title = "&Uuml;bersicht";
+    break;
+    default:
+        if(!check_var('login')){
+            $title = "Login";
+        } else {
+            $title = "&Uuml;bersicht";
+        }
     break;
 }
 ?>
