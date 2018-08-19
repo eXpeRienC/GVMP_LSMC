@@ -54,4 +54,5 @@
   <input type="text" class="form-control" placeholder="Info" aria-label="Username" aria-describedby="basic-addon1">
 </div>
 
-<button type="button" class="btn btn-primary btn-lg">Hinzufügen</button>
+<input type="hidden" name="site" value="invite" />
+<input class="btn btn.lg btn-primary btn-block" type="submit" value="Hinzufügen" />
