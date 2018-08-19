@@ -23,7 +23,12 @@ echo "Ausgabe GET: "; print_r($_GET);
 }
 
 $error = check_var('error');
-$icname = check_var('icname');
+if(isset($_SESSION['icname']) && $_SESSION['icname'] != "") {
+    $icname = $_SESSION['icname'];
+} else {
+    $icname = "";
+}
+$user = check_user($db, $icname);
 
 if(isset($_GET['site']) && $_GET['site']){
     $site = $_GET['site'];

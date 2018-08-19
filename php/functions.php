@@ -18,6 +18,7 @@ function check_login($db, $icname, $password){
             $arr = array('error' => 'Code00',
                          'site' => 'Uebersicht',
                          'icname' => md5($icname));
+                         $_SESSION['icname'] = $icname;
             redirect_post("../index.php", $arr);
         } else {
             $arr = array('error' => 'Code02');
@@ -27,6 +28,13 @@ function check_login($db, $icname, $password){
         $arr = array('error' => 'Code01');
         redirect_post("../index.php", $arr);
     }
+}
+
+// Überprüfe welcher User unter dem Hash läuft
+function check_user($db, $icname){
+    $db->select("mitarbeiter", "*", null, 'icname="'.$icname.'"');
+    $fetch = $db->getResult();
+    return $fetch[0];
 }
 
 // Sende Daten als Post auf die neue Seite
