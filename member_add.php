@@ -4,7 +4,17 @@
 		Textfelder für ID und Tel.Nr.:
 		
 -->
-
+ <form action="index.php" method="post" name="Invite">
+ <?php
+            if($error_txt != ""){
+            ?>
+                <div class="alert <?php echo $error_style; ?>" role="alert">
+                <?php echo $error_txt; ?>
+            </div>
+            <?php
+            }
+            ?>
+			
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">ID</span>
@@ -33,17 +43,16 @@
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">Rang</label>
   </div>
-  <select class="custom-select" id="inputGroupSelect01" required>
-    <option selected>Wähle...</option>
-    <option value="1">0</option>
-    <option value="2">1</option>
-    <option value="3">2</option>
+  <select class="custom-select" id="inputGroupSelect01">
+    <option value="0" selected>0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
 	<option value="3">3</option>
-	<option value="3">4</option>
-	<option value="3">5</option>
-	<option value="3">6</option>
-	<option value="3">7</option>
-	<option value="3">8</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
   </select>
 </div>
 
@@ -56,3 +65,4 @@
 
 <input type="hidden" name="site" value="invite" />
 <input class="btn btn.lg btn-primary btn-block" type="submit" value="Hinzufügen" />
+</form>
