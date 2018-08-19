@@ -51,6 +51,7 @@ if(!$login) $title = "Login";
         } else {
 
             include("header.php");
+			include("member.php");
             include("footer.php");
         }
         ?>
