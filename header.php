@@ -12,8 +12,7 @@
       <li class="nav-item">
         <a class="nav-link" href="?site=member">Mitglieder</a>
       </li>
-      <li class="nav-item">
-		<div class="dropdown">
+		<li class="nav-item dropdown">
 			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			Verwaltung
       </button>
@@ -22,7 +21,6 @@
         <a class="dropdown-item" href="#">Another action</a>
         <a class="dropdown-item" href="#">Something else here</a>
       </div>
-    </div>
     </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
