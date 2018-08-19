@@ -34,7 +34,11 @@ function check_login($db, $icname, $password){
 function check_user($db, $icname){
     $db->select("mitarbeiter", "*", null, 'icname="'.$icname.'"');
     $fetch = $db->getResult();
-    return $fetch[0];
+    if($db->numRows() != 0) {
+        return $fetch[0];
+    } else {
+        return "";
+    }
 }
 
 // Sende Daten als Post auf die neue Seite

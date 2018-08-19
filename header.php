@@ -12,6 +12,7 @@
       <li class="nav-item">
         <a class="nav-link" href="?site=member">Mitglieder</a>
       </li>
+      <?php if($user["rang"] > 9){ ?>
 		<li class="nav-item dropdown">
 			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			Verwaltung
@@ -23,6 +24,7 @@
         <a class="dropdown-item" href="?site=member_add">Mitarbeiter hinzufügen</a>
       </div>
     </li>
+      <?php } ?>
     </ul>
     <li class="nav-item">
         <a class="nav-link" href="?logout=true">Logout</a>
@@ -30,3 +32,12 @@
   </div>
 </nav>
 <div class="container">
+<?php
+if($error_txt != ""){
+?>
+    <div class="alert <?php echo $error_style; ?>" role="alert">
+    <?php echo $error_txt; ?>
+</div>
+<?php
+}
+?>

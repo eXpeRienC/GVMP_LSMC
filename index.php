@@ -58,8 +58,14 @@ if(!$login) $title = "Login";
                 case 'member':
                 include("member.php");
                 break;
-				case 'member_add':
-				include("member_add.php");
+                case 'member_add':
+                if($user['rang'] > 9) {
+                    include("member_add.php");
+                } else {
+                    $arr = array('error' => 'Code04',
+                                'site' => 'member');
+                    redirect_post("../index.php", $arr);
+                }
 				break;
 				case 'verwaltung':
 				include("verwaltung.php");
