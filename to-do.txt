@@ -1,0 +1,12 @@
+@Eduard
+Folgende Contentseiten benötigt:
+Übersicht (Für Anzeigen wie Forumslinks und ähnliches)
+Mitarbeiteranzeige für Verwaltung
+Mitarbeiter hinzufügen
+Mitarbeiter bearbeiten
+
+
+@Mike
+Features Mitarbeiter hinzufügen
+Features Mitarbeiter bearbeiten
+Feature Ausgabe Mitarbeiteranzeige
