@@ -11,12 +11,30 @@ body {
     padding-top: 40px;
     padding-bottom: 40px;
     background-color: #f5f5f5;
-	/*background-image:url("../img/bg.jpg");*/
 	background-position:top;
 	background-repeat:no-repeat;
-	/*background-color: #000;*/
 	margin: 0px auto;
   }
+  
+header {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 50px;
+	text-align: center;	
+}
+
+nav {
+	text-align: center;	
+}
+
+nav ul {
+	list-style-type: none;
+}
+
+nav li{
+	display: inline;
+	margin-right: 40px;
+}
 
 .form-signin {
     width: 100%;
@@ -24,3 +42,10 @@ body {
     padding: 15px;
     margin: auto;
   }
+
+  /*######################## Footer ########################*/
+  
+footer { width:100%; background:#000; height:50px;}
+footer #ud_footer_menu { color:#fff; font-family:Arial, Helvetica, sans-serif;background-image: url("...img/contbg.jpg");background-repeat: repeat-y;}
+ 
+ 
