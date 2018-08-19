@@ -17,15 +17,16 @@
 			Verwaltung
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Übersicht</a>
+        <a class="dropdown-item" href="?site=verwaltung">Übersicht</a>
         <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+		<div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="?site=member_add">Mitarbeiter hinzufügen</a>
       </div>
     </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Suchbegriff" aria-label="Suchen">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Suchen</button>
-    </form>
+    <li class="nav-item">
+        <a class="nav-link" href="?logout=true">Logout</a>
+      </li>
   </div>
 </nav>
+<div class="container">

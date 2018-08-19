@@ -58,6 +58,12 @@ if(!$login) $title = "Login";
                 case 'member':
                 include("member.php");
                 break;
+				case 'member_add':
+				include("member_add.php");
+				break;
+				case 'verwaltung':
+				include("verwaltung.php");
+				break;
             }
 
             include("footer.php");

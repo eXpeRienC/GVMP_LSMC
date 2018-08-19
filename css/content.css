@@ -22,7 +22,16 @@ nav li{
 
   /*######################## Footer ########################*/
   
-footer { width:100%; background:#000; height:50px;}
-footer #ud_footer_menu { color:#fff; font-family:Arial, Helvetica, sans-serif;background-image: url("...img/contbg.jpg");background-repeat: repeat-y;}
+footer { width:100%; background:#000; height:150px; float:left;}
+footer #ud_footer_menu { color:#DF01D7; font-family:Arial, Helvetica, sans-serif;background-image: url("...img/contbg.jpg");background-repeat: repeat-y; text-align: center; font-size: 14px; margin: 50px 0 0 0;}
  
- 
+   /*######################## Member ########################*/
+   
+.container {
+    width: 100%;
+    max-width: auto;
+    padding: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+    margin: auto;
+  }
