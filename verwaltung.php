@@ -1,69 +1,75 @@
 
 
-
-  <div class="row bg-primary text-white">
-	<div class="col-1 border border-right-0 border-dark text-center">
+<table class="table">
+  <thead>
+    <tr class="d-flex">
+	<th class="col-1 border border-right-0 border-dark text-center bg-primary text-white">
       ID
-    </div>
-    <div class="col-2 border border-dark">
+</th>
+    <th class="col-2 border border-dark bg-primary text-white">
       InGame_Name
-    </div>
-    <div class="col-2 border border-left-0 border-dark">
+</th>
+    <th class="col-2 border border-left-0 border-dark bg-primary text-white">
       Forum_Name
-    </div>
-    <div class="col-1 border border-left-0 border-dark text-center">
+    </th>
+    <th class="col-2 border border-left-0 border-dark text-center bg-primary text-white">
       Beitritt
-    </div>
-	<div class="col-1 border border-left-0 border-dark text-center">
+    </th>
+	<th class="col-1 border border-left-0 border-dark text-center bg-primary text-white">
       Tel.Nr.:
-    </div>
-	<div class="col-2 border border-left-0 border-dark text-center">
+    </th>
+	<th class="col-2 border border-left-0 border-dark text-center bg-primary text-white">
       Info
     </div>
-	<div class="col-1 border border-left-0 border-dark text-center">
+	<th class="col-1 border border-left-0 border-dark text-center bg-primary text-white">
       Rang
     </div>
-	<div class="col-sm border border-left-0 border-dark text-center">
+	<th class="col-2 border border-left-0 border-dark text-center bg-primary text-white">
       Bemerkung
-    </div>
-	<div class="col-1 border border-left-0 border-dark text-center">
-    </div>
-  </div>
+    </th>
+	<th class="col-1 border border-left-0 border-dark text-center bg-primary text-white">
+    &nbsp;
+    </th>
+</tr>
+</thead>
+<tbody>
   <?php
   $db->select("mitarbeiter","*","","","rang DESC, icname");
   $fetch = $db->getResult();
   foreach($fetch as $k => $v){
   ?>
-  <div class="row">
-	<div class="col-1 border border-right-0 border-top-0 border-dark text-center">
+  <tr class="d-flex">
+	<td class="col-1 border border-right-0 border-top-0 border-dark text-center">
 		<?php echo $v['ID']; ?>
-	</div>
-	<div class="col-2 border border-top-0 border-dark">
+	</td>
+	<td class="col-2 border border-top-0 border-dark">
 		<?php echo $v['icname']; ?>
-	</div>
-	<div class="col-2 border border-left-0 border-top-0 border-dark">
+	</td>
+	<td class="col-2 border border-left-0 border-top-0 border-dark">
 		<?php echo $v['forumname']; ?>
-	</div>
-	<div class="col-1 border border-left-0 border-top-0 border-dark text-center">
+	</td>
+	<td class="col-2 border border-left-0 border-top-0 border-dark text-center">
 		<?php echo $v['beitritt']; ?>
-	</div>
-	<div class="col-1 border border-left-0 border-top-0 border-dark text-center">
+	</td>
+	<td class="col-1 border border-left-0 border-top-0 border-dark text-center">
 		<?php echo $v['telefon']; ?>
-	</div>	
-	<div class="col-2 border border-left-0 border-top-0 border-dark text-center">
+	</ditdv>	
+	<td class="col-2 border border-left-0 border-top-0 border-dark text-center">
 		<?php echo $v['info']; ?>
-  </div>
-  <div class="col-1 border border-left-0 border-top-0 border-dark text-center">
+  </td>
+  <td class="col-1 border border-left-0 border-top-0 border-dark text-center">
 		<?php echo $v['rang']; ?>
-  </div>
-  <div class="col-sm border border-left-0 border-top-0 border-dark text-center" & nbsb;>
+  </td>
+  <td class="col-2 border border-left-0 border-top-0 border-dark text-center" & nbsb;>
 	
-  </div>
-  <div class="col-1 border border-left-0 border-top-0 border-dark text-center">
+  </td>
+  <td class="col-1 border border-left-0 border-top-0 border-dark text-center">
 	<button type="button" class="btn btn-outline-dark btn-sm fas fa-edit"></button>
-  </div>
+  </td>
   
-  </div>
+  </tr>
   <?php
   }
   ?>
+</tbody>
+</table>
