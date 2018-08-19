@@ -51,7 +51,13 @@ if(!$login) $title = "Login";
         } else {
 
             include("header.php");
-			include("member.php");
+
+            switch($site){
+                case 'member':
+                include("member.php");
+                break;
+            }
+
             include("footer.php");
         }
         ?>

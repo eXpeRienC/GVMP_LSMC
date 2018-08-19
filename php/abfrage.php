@@ -22,9 +22,14 @@ echo "Ausgabe POST: "; print_r($_POST); echo "<br/>";
 echo "Ausgabe GET: "; print_r($_GET);
 }
 
-$site = check_var('site');
 $error = check_var('error');
 $icname = check_var('icname');
+
+if(isset($_GET['site']) && $_GET['site']){
+    $site = $_GET['site'];
+} else {
+    $site = check_var('site');
+}
 
 // Gebe die richtigen Fehler aus
 switch($error){
