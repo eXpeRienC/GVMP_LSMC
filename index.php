@@ -34,6 +34,8 @@ if(!$login) $title = "Login";
 
         <title>LSMC - <?php echo $title; ?></title>
 
+
+
         <!-- Bootstrap core CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
 
@@ -61,5 +63,9 @@ if(!$login) $title = "Login";
             include("footer.php");
         }
         ?>
+        <!-- Bootstrap core JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script languag="javascript" type="text/javascript" src="../js/popper.min.js"></script>
+        <script languag="javascript" type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

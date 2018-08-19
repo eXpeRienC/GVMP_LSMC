@@ -12,7 +12,7 @@ function check_var($var){
 
 // Überprüfe Login
 function check_login($db, $icname, $password){
-    $db->select('Mitarbeiter', 'password', null, 'icname="'.$icname.'"');
+    $db->select('mitarbeiter', 'password', null, 'icname="'.$icname.'"');
     if($db->numRows() == 1){
         if(md5(check_var('inputpassword')) == $db->getResult()[0]['password']){
             $arr = array('error' => 'Code00',
