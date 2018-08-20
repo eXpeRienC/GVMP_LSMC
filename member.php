@@ -1,39 +1,43 @@
 
 
-
-  <div class="row bg-primary text-white">
-    <div class="col-sm border border-dark">
+<table class="table">
+  <thead>
+    <tr>
+	<th class="p-2 text-center bg-primary text-white">
       InGame_Name
-    </div>
-    <div class="col-sm border border-left-0 border-dark">
-      Forum_Name
-    </div>
-    <div class="col-1 border border-left-0 border-dark text-center">
-      Rang
-    </div>
-	<div class="col-1 border border-left-0 border-dark text-center">
-      Tel.Nr.:
-    </div>
-  </div>
+  </th>
+      <th class="p-2 bg-primary text-white">
+        Forum_Name
+  </th>
+      <th class="p-2 bg-primary text-white">
+        Rang
+  </th>
+      <th class="p-2 bg-primary text-white">
+        Tel.Nr.:
+      </th>
+  </tr>
+</thead>
+<tbody>
   <?php
   $db->select("mitarbeiter","*","","","rang DESC, icname");
   $fetch = $db->getResult();
   foreach($fetch as $k => $v){
   ?>
-  <div class="row">
-	<div class="col-sm border border-top-0 border-dark">
+  <tr>
+	<td class="p-2 text-center">
 		<?php echo $v['icname']; ?>
-	</div>
-	<div class="col-sm border border-left-0 border-top-0 border-dark">
+	</td>
+	<td class="p-2">
 		<?php echo $v['forumname']; ?>
-	</div>	
-	<div class="col-1 border border-left-0 border-top-0 border-dark text-center">
+	</td>
+	<td class="p-2">
 		<?php echo $v['rang']; ?>
-	</div>	
-	<div class="col-1 border border-left-0 border-top-0 border-dark text-center">
+	</td>
+	<td class="p-2">
 		<?php echo $v['telefon']; ?>
-  </div>
-  </div>
+  </td>
+  </tr>
   <?php
   }
   ?>
+</table>
