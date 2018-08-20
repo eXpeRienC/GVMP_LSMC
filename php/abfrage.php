@@ -85,6 +85,10 @@ switch($error){
         $error_txt = $_POST['mitarbeiter'] . " wurde erfolgreich degradiert!";
         $error_style = "alert-success";
     break;
+    case 'Code11':
+        $error_txt = $_POST['mitarbeiter'] . " wurde erfolgreich bearbeitet!";
+        $error_style = "alert-success";
+    break;
     default:
         $error_txt = "";
         $error_style = "alert-primary";
@@ -176,6 +180,23 @@ switch($site){
             $inputemail  = $_POST['inputemail'];
             $inputinfo = $_POST['inputinfo'];
         }
+    break;
+    case 'member_edit':
+        $title = "Mitarbeiter bearbeiten";
+        $db->select('mitarbeiter','*',null,'ID='.$_POST['playerid']);
+        $player = $db->getResult();
+    break;
+    case 'member_edit_save':
+        $title = "Mitarbeiter bearbeitet";
+        $arr = array(
+            'icname' => $_POST['inputicname'],
+            'forumname' => $_POST['inputforumname'],
+            'info' => $_POST['inputinfo'],
+            'bemerkung' => $_POST['inputbemerkung']
+        );
+        $db->update('mitarbeiter',$arr,'ID='.$_POST['playerid']);
+        $arr = array('error' => 'Code11', 'site' => 'verwaltung', 'mitarbeiter' => $_POST['inputicname']);
+        redirect_post("../index.php", $arr);
     break;
     default:
         if(!check_var('login')){
