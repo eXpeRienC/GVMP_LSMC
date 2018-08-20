@@ -9,6 +9,7 @@
             }
             ?>
 			
+			
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">ID</span>
@@ -29,10 +30,29 @@
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Beitritt</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Beitritt" aria-label="Username" aria-describedby="basic-addon1" required>
+</div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Tel.Nr.:</span>
   </div>
   <input type="text" class="form-control" placeholder="Tel.Nr.:" aria-label="Username" aria-describedby="basic-addon1" required>
 </div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Info</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Info" aria-label="Username" aria-describedby="basic-addon1" >
+</div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Bemerkung</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Bemerkung" aria-label="Username" aria-describedby="basic-addon1" >
+</div>
 
-		
+<input type="hidden" name="site" value="edit" />
+<input class="btn btn.lg btn-primary btn-block" type="submit" value="Bearbeiten" />		
 </form>
