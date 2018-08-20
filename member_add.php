@@ -5,45 +5,36 @@
 		
 -->
  <form action="index.php" method="post" name="Invite">
- <?php
-            if($error_txt != ""){
-            ?>
-                <div class="alert <?php echo $error_style; ?>" role="alert">
-                <?php echo $error_txt; ?>
-            </div>
-            <?php
-            }
-            ?>
 			
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">ID</span>
   </div>
-  <input type="text" class="form-control" placeholder="ID" aria-label="Username" aria-describedby="basic-addon1" required autofocus>
+  <input type="text" class="form-control" name="inputid" placeholder="ID" aria-label="ID" aria-describedby="basic-addon1" value="<?php echo $inputid ; ?>" required autofocus>
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">InGameName</span>
   </div>
-  <input type="text" class="form-control" placeholder="InGameName" aria-label="Username" aria-describedby="basic-addon1" required>
+  <input type="text" class="form-control" name="inputicname" placeholder="InGameName" aria-label="icname" aria-describedby="basic-addon1" value="<?php echo $inputicname; ?>" required>
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1" >ForumName</span>
   </div>
-  <input type="text" class="form-control" placeholder="ForumName" aria-label="Username" aria-describedby="basic-addon1" required>
+  <input type="text" class="form-control" name="inputforumname" placeholder="ForumName" aria-label="ForumName" aria-describedby="basic-addon1" value="<?php echo $inputforumname ; ?>" required>
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Tel.Nr.:</span>
   </div>
-  <input type="text" class="form-control" placeholder="Tel.Nr.:" aria-label="Username" aria-describedby="basic-addon1" required>
+  <input type="text" class="form-control" name="inputtelefon" placeholder="Tel.Nr.:" aria-label="telefon" aria-describedby="basic-addon1" value="<?php echo $inputtelefon ; ?>" required>
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">Rang</label>
   </div>
-  <select class="custom-select" id="inputGroupSelect01">
+  <select class="custom-select" name="inputrang" id="inputGroupSelect01">
     <option value="0" selected>0</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -55,12 +46,17 @@
 	<option value="8">8</option>
   </select>
 </div>
-
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Email</span>
+  </div>
+  <input type="text" class="form-control" name="inputemail" placeholder="maxmusterman@test.com" aria-label="Email" aria-describedby="basic-addon1" value="<?php echo $inputemail ; ?>" required>
+</div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Info</span>
   </div>
-  <input type="text" class="form-control" placeholder="Info" aria-label="Username" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" name="inputinfo" placeholder="Info" aria-label="Info" aria-describedby="basic-addon1" value="<?php echo $inputinfo ; ?>">
 </div>
 
 <input type="hidden" name="site" value="invite" />

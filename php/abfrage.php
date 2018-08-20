@@ -61,6 +61,14 @@ switch($error){
         $error_txt = "Kein Zugang zu dieser Seite!";
         $error_style = "alert-danger";
     break;
+    case 'Code05':
+        $error_txt = "Ungültige Eingabe!";
+        $error_style = "alert-danger";
+    break;
+    case 'Code06':
+        $error_txt = "Neuer Mitarbeiter wurde erfolgreich eingestellt!";
+        $error_style = "alert-success";
+    break;
     default:
         $error_txt = "";
         $error_style = "alert-primary";
@@ -83,6 +91,42 @@ switch($site){
     break;
     case 'Uebersicht':
         $title = "&Uuml;bersicht";
+    break;
+    case 'invite':
+        $title = "Invite";        
+        $arr = array('error' => 'Code05', 'site' => 'member_add');
+        $arr += $_POST;
+        // Überprüfe auf sämtliche Felder die falsch sein können
+        if(is_numeric($_POST['inputid'])){
+            if(is_numeric($_POST['inputtelefon'])){
+                if(filter_var($_POST['inputemail'], FILTER_VALIDATE_EMAIL)){
+                    $insert = array('ID' => $_POST['inputid'], 'icname' => $_POST['inputicname'], 'forumname' => $_POST['inputforumname'], 'telefon' => $_POST['inputtelefon'], 'info' => $_POST['inputinfo'], 'rang' => $_POST['inputrang'], 'email' => $_POST['inputemail'], 'beitritt' => date("Y-m-d"));
+                    $db->insert("mitarbeiter", $insert);
+                    $arr = array('error' => 'Code06', 'site' => 'member_add');
+                    redirect_post("../index.php", $arr);
+                } else {
+                    redirect_post("../index.php", $arr);
+                }
+            } else {
+                redirect_post("../index.php", $arr);
+            }
+        } else {
+            redirect_post("../index.php", $arr);
+        }
+    break;
+    case 'member_add':
+        $title = "Mitarbeiter hinzuf&uuml;gen";
+        $inputid = ""; $inputicname = ""; $inputforumname = ""; $inputtelefon = ""; $inputrang = ""; $inputemail = ""; $inputinfo = "";
+        if(isset($_POST['inputid'])){
+            $inputid = $_POST['inputid'];
+            $inputicname = $_POST['inputicname'];
+            $inputforumname = $_POST['inputforumname'];
+            $inputtelefon = $_POST['inputtelefon'];
+            $inputrang  = $_POST['inputrang'];
+            $inputemail  = $_POST['inputemail'];
+            $inputinfo = $_POST['inputinfo'];
+            print_r($_POST);
+        }
     break;
     default:
         if(!check_var('login')){
