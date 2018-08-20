@@ -1,33 +1,33 @@
 
 
-<table class="table">
+<table class="table-responsive table-striped">
   <thead>
-    <tr class="d-flex">
-	<th class="col-1 border border-right-0 border-dark text-center bg-primary text-white">
+    <tr>
+	<th class="p-2 text-center bg-primary text-white">
       ID
 </th>
-    <th class="col-2 border border-dark bg-primary text-white">
+    <th class="p-2 bg-primary text-white">
       InGame_Name
 </th>
-    <th class="col-2 border border-left-0 border-dark bg-primary text-white">
+    <th class="p-2 bg-primary text-white">
       Forum_Name
     </th>
-    <th class="col-2 border border-left-0 border-dark text-center bg-primary text-white">
+    <th class="p-2 text-center bg-primary text-white">
       Beitritt
     </th>
-	<th class="col-1 border border-left-0 border-dark text-center bg-primary text-white">
+	<th class="p-2 text-center bg-primary text-white">
       Tel.Nr.:
     </th>
-	<th class="col-2 border border-left-0 border-dark text-center bg-primary text-white">
+	<th class="p-2 text-center bg-primary text-white">
       Info
     </div>
-	<th class="col-2 border border-left-0 border-dark text-center bg-primary text-white">
+	<th class="p-2 text-center bg-primary text-white">
       Rang
     </div>
-	<th class="col-2 border border-left-0 border-dark text-center bg-primary text-white">
+	<th class="p-2 text-center bg-primary text-white">
       Bemerkung
     </th>
-	<th class="col-1 border border-left-0 border-dark text-center bg-primary text-white">
+	<th class="p-2 text-center bg-primary text-white">
     &nbsp;
     </th>
 </tr>
@@ -38,34 +38,34 @@
   $fetch = $db->getResult();
   foreach($fetch as $k => $v){
   ?>
-  <tr class="d-flex">
-	<td class="col-1 border border-right-0 border-top-0 border-dark text-center">
+  <tr>
+	<td class="p-2 text-center">
 		<?php echo $v['ID']; ?>
 	</td>
-	<td class="col-2 border border-top-0 border-dark">
+	<td class="p-2">
 		<?php echo $v['icname']; ?>
 	</td>
-	<td class="col-2 border border-left-0 border-top-0 border-dark">
+	<td class="p-2">
 		<?php echo $v['forumname']; ?>
 	</td>
-	<td class="col-2 border border-left-0 border-top-0 border-dark text-center">
+	<td class="p-2 text-center">
 		<?php echo $v['beitritt']; ?>
 	</td>
-	<td class="col-1 border border-left-0 border-top-0 border-dark text-center">
+	<td class="p-2 text-center">
 		<?php echo $v['telefon']; ?>
 	</ditdv>	
-	<td class="col-2 border border-left-0 border-top-0 border-dark text-center">
+	<td class="p-2 text-center">
 		<?php echo $v['info']; ?>
   </td>
-  <td class="col-2 border border-left-0 border-top-0 border-dark text-center">
+  <td class="p-2 text-center">
 		<?php echo $v['rang']; ?>
 		<button type="button" class="btn btn-outline-success btn-sm fas fa-caret-square-up"></button>
 		<button type="button" class="btn btn-outline-danger btn-sm fas fa-caret-square-down"></button>
   </td>
-  <td class="col-2 border border-left-0 border-top-0 border-dark text-center" & nbsb;>
+  <td class="p-2 text-center" & nbsb;>
 	
   </td>
-  <td class="col-1 border border-left-0 border-top-0 border-dark text-center">
+  <td class="p-2 text-center">
 	<button type="button" class="btn btn-outline-dark btn-sm fas fa-edit"></button>
   </td>
   
