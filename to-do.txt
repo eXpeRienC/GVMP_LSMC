@@ -1,10 +1,45 @@
 @Eduard
 Folgende Contentseiten benötigt:
 Übersicht (Für Anzeigen wie Forumslinks und ähnliches)
-Mitarbeiteranzeige für Verwaltung
-Mitarbeiter hinzufügen
-Mitarbeiter bearbeiten
+Profil Button oben Rechts mit Icon
+Profil bearbeiten Seite
+	InGame_Name
+	ForumsName
+	PW ändern
+	PW wiederholen
+	PW bestätigung
+	
+	Checkbox für Tel Anzeigen Ja / Nein
+	Checkbox für E-Mail benachrichtigungen erhalten Ja / Nein
+	
+	Bestätigungs Button
+Dropdown-Menü für:
+	User
+		Urlaubsantrag
+		Urlaubsübersicht
+		Anmeldungen
+			Was ? Dropdown-Menü
+				EST 
+				NFZ
+				Approbation
+			Multiselect https://mdbootstrap.com/javascript/bootstrap-multiselect/
+				Mo. bis So.
+			Uhrzeiten je 30 min.
+			Bestätigungs-Button
+	Personal
+		Sanktionen
+		Aktivität
+		Personalakten
+		Urlaubsübersicht
+			Eintragsfeld
+			Bearbeitungsfelder
+		Terminkalender
+	Ausbildung
+		Terminkalender
+	EHK
+		Terminkalender
 
+	
 
 @Mike
 Features Mitarbeiter hinzufügen
