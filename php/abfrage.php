@@ -69,6 +69,22 @@ switch($error){
         $error_txt = "Neuer Mitarbeiter wurde erfolgreich eingestellt!";
         $error_style = "alert-success";
     break;
+    case 'Code07':
+        $error_txt = "Bei der Beförderung ist etwas schief gelaufen!";
+        $error_style = "alert-danger";
+    break;
+    case 'Code08':
+        $error_txt = $_POST['mitarbeiter'] . " wurde erfolgreich befördert!";
+        $error_style = "alert-success";
+    break;
+    case 'Code09':
+        $error_txt = "Bei der Degradierung ist etwas schief gelaufen!";
+        $error_style = "alert-danger";
+    break;
+    case 'Code10':
+        $error_txt = $_POST['mitarbeiter'] . " wurde erfolgreich degradiert!";
+        $error_style = "alert-success";
+    break;
     default:
         $error_txt = "";
         $error_style = "alert-primary";
@@ -114,6 +130,40 @@ switch($site){
             redirect_post("../index.php", $arr);
         }
     break;
+    case 'rankup':
+        $title = "Beförderung";
+        $db->select("mitarbeiter","rang,icname",null,"ID=".$_POST['playerid']);
+        $rang = $db->getResult();
+        $icname = $rang[0]['icname'];
+        $rang = $rang[0]['rang'];
+        if($rang < $user['rang']){
+            $rang += 1;
+            $arr = array('rang' => ($rang));
+            $db->update('mitarbeiter',$arr,"ID=".$_POST['playerid']);
+            $arr = array('error' => 'Code08', 'site' => 'verwaltung', 'mitarbeiter' => $icname);
+            redirect_post("../index.php", $arr);
+        } else {
+            $arr = array('error' => 'Code07', 'site' => 'verwaltung');
+            redirect_post("../index.php", $arr);
+        }
+    break;
+    case 'rankdown':
+        $title = "Degradierung";
+        $db->select("mitarbeiter","rang,icname",null,"ID=".$_POST['playerid']);
+        $rang = $db->getResult();
+        $icname = $rang[0]['icname'];
+        $rang = $rang[0]['rang'];
+        if($rang < $user['rang']){
+            $rang -= 1;
+            $arr = array('rang' => ($rang));
+            $db->update('mitarbeiter',$arr,"ID=".$_POST['playerid']);
+            $arr = array('error' => 'Code10', 'site' => 'verwaltung', 'mitarbeiter' => $icname);
+            redirect_post("../index.php", $arr);
+        } else {
+            $arr = array('error' => 'Code09', 'site' => 'verwaltung');
+            redirect_post("../index.php", $arr);
+        }
+    break;
     case 'member_add':
         $title = "Mitarbeiter hinzuf&uuml;gen";
         $inputid = ""; $inputicname = ""; $inputforumname = ""; $inputtelefon = ""; $inputrang = ""; $inputemail = ""; $inputinfo = "";
@@ -125,7 +175,6 @@ switch($site){
             $inputrang  = $_POST['inputrang'];
             $inputemail  = $_POST['inputemail'];
             $inputinfo = $_POST['inputinfo'];
-            print_r($_POST);
         }
     break;
     default:

@@ -58,17 +58,24 @@
 		<?php echo $v['info']; ?>
   </td>
   <td class="p-2 text-center">
-		<?php echo $v['rang']; ?>
-		<button type="button" class="btn btn-outline-success btn-sm fas fa-caret-square-up"></button>
-		<button type="button" class="btn btn-outline-danger btn-sm fas fa-caret-square-down"></button>
+    <form action="../index.php" method="post">
+    <?php echo $v['rang']; 
+    if($v['rang'] < $user['rang']){ ?>
+		<button type="submit" name="site" value="rankup" class="btn btn-outline-success btn-sm fas fa-caret-square-up"></button>
+    <button type="submit" name="site" value="rankdown" class="btn btn-outline-danger btn-sm fas fa-caret-square-down"></button>
+    <input type="hidden" name="playerid" value="<?php echo $v['ID']; ?>">
+    <?php } ?>
+    </form>
   </td>
-  <td class="p-2 text-center" & nbsb;>
-	
+  <td class="p-2 text-center">  
+    &nbsp;	
   </td>
   <td class="p-2 text-center">
-	<button type="button" class="btn btn-outline-dark btn-sm fas fa-edit"></button>
+    <form action="../index.php" method="post">
+      <button type="submit" name="site" value="member_edit" class="btn btn-outline-dark btn-sm fas fa-edit"></button>
+    <input type="hidden" name="playerid" value="<?php echo $v['ID']; ?>">
+    </form>
   </td>
-  
   </tr>
   <?php
   }
