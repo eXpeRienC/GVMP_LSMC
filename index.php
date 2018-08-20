@@ -68,6 +68,15 @@ if(!$login) $title = "Login";
                     redirect_post("../index.php", $arr);
                 }
 				break;
+				case 'member_edit':
+				if($user['rang'] >9) {
+					include("member_edit.php");
+				} else {
+					$arr = array('error' => 'Code04',
+								'site' => 'member');
+					redirect_post("../index.php", $arr);
+				}
+				break;
 				case 'verwaltung':
 				include("verwaltung.php");
 				break;

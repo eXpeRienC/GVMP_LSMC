@@ -21,7 +21,7 @@
 	<th class="col-2 border border-left-0 border-dark text-center bg-primary text-white">
       Info
     </div>
-	<th class="col-1 border border-left-0 border-dark text-center bg-primary text-white">
+	<th class="col-2 border border-left-0 border-dark text-center bg-primary text-white">
       Rang
     </div>
 	<th class="col-2 border border-left-0 border-dark text-center bg-primary text-white">
@@ -57,8 +57,10 @@
 	<td class="col-2 border border-left-0 border-top-0 border-dark text-center">
 		<?php echo $v['info']; ?>
   </td>
-  <td class="col-1 border border-left-0 border-top-0 border-dark text-center">
+  <td class="col-2 border border-left-0 border-top-0 border-dark text-center">
 		<?php echo $v['rang']; ?>
+		<button type="button" class="btn btn-outline-success btn-sm fas fa-caret-square-up"></button>
+		<button type="button" class="btn btn-outline-danger btn-sm fas fa-caret-square-down"></button>
   </td>
   <td class="col-2 border border-left-0 border-top-0 border-dark text-center" & nbsb;>
 	
