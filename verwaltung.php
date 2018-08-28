@@ -20,10 +20,13 @@
     </th>
 	<th class="p-2 text-center bg-primary text-white">
       Info
-    </div>
+    </th>
 	<th class="p-2 text-center bg-primary text-white">
       Rang
-    </div>
+    </th>
+	<th class="p-2 text-center bg-primary text-white">
+      Letzte Beförderung
+    </th>
 	<th class="p-2 text-center bg-primary text-white">
       Bemerkung
     </th>
@@ -53,7 +56,7 @@
 	</td>
 	<td class="p-2 text-center">
 		<?php echo $v['telefon']; ?>
-	</ditdv>	
+	</div>	
 	<td class="p-2 text-center">
 		<?php echo $v['info']; ?>
   </td>
@@ -66,6 +69,14 @@
     <input type="hidden" name="playerid" value="<?php echo $v['ID']; ?>">
     <?php } ?>
     </form>
+  </td>
+  <td class="p-2 text-center">  
+    <?php $db->select("rangaenderungen", "*", "", "userID=".$v['ID'],"ID DESC","1"); 
+      if($db->numRows() != 0){
+        $fetch = $db->getResult();
+        echo $fetch[0]['btag'];
+      }
+    ?>	
   </td>
   <td class="p-2 text-center">  
     &nbsp;	

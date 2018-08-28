@@ -144,6 +144,8 @@ switch($site){
             $rang += 1;
             $arr = array('rang' => ($rang));
             $db->update('mitarbeiter',$arr,"ID=".$_POST['playerid']);
+            $arr2 = array('userID' => $_POST['playerid'], 'downuprang' => 'rankup');
+            $db->insert('rangaenderungen',$arr2);
             $arr = array('error' => 'Code08', 'site' => 'verwaltung', 'mitarbeiter' => $icname);
             redirect_post("../index.php", $arr);
         } else {
@@ -161,6 +163,8 @@ switch($site){
             $rang -= 1;
             $arr = array('rang' => ($rang));
             $db->update('mitarbeiter',$arr,"ID=".$_POST['playerid']);
+            $arr2 = array('userID' => $_POST['playerid'], 'downuprang' => 'rankdown');
+            $db->insert('rangaenderungen',$arr2);
             $arr = array('error' => 'Code10', 'site' => 'verwaltung', 'mitarbeiter' => $icname);
             redirect_post("../index.php", $arr);
         } else {

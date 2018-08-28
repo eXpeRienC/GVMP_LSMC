@@ -42,6 +42,20 @@ Dropdown-Menü für:
 	
 
 @Mike
-Features Mitarbeiter hinzufügen
-Features Mitarbeiter bearbeiten
-Feature Ausgabe Mitarbeiteranzeige
+
+Alles was zu Berechnung von Rankups benötigt wird:
+
+FSTs einpflegen
+Solofreifahrten genehmigen und Anzeigen
+Lösen über Termine: (
+NFZ Anzeigen und eintragen
+Approbation Anzeigen und eintragen
+EST Anzeigen und eintragen, Beantragen erst mit FST RTW
+)
+Urlaub eintragen und Anzeigen
+Dienstzeiten erfassen (Anfangs händisch) - Abfragen von Google Excel Tabelle
+Einweisungen erledigt Schriftlich und Mündlich
+
+Rankupsperre hinzufügen mit Angabe der Wochen und Grund weswegen
+
+Nur für Rang 11-12 + Programmierer Beförderungsintervalle einstellen sowie benötigte Skills. Wieviele Tage nach Beförderung.
