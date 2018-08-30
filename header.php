@@ -25,6 +25,16 @@
       </div>
     </li>
       <?php } ?>
+      <?php if($user["rang"] > 9){ ?>
+		<li class="nav-item dropdown">
+			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Ausbildung
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="?site=fst_add">FST eintragen</a>
+      </div>
+    </li>
+      <?php } ?>
     </ul>
     <li class="nav-item">
         <a class="nav-link" href="?logout=true">Logout</a>

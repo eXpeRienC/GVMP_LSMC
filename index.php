@@ -79,7 +79,10 @@ if(!$login) $title = "Login";
 				break;
 				case 'verwaltung':
 				include("verwaltung.php");
-				break;
+                break;
+                case 'fst_add':
+                    include("fst_add.php");
+                break;
             }
 
             include("footer.php");

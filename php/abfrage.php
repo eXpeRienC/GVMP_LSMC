@@ -202,6 +202,10 @@ switch($site){
         $arr = array('error' => 'Code11', 'site' => 'verwaltung', 'mitarbeiter' => $_POST['inputicname']);
         redirect_post("../index.php", $arr);
     break;
+    case 'fst_add':
+    var $inputmitarbeiter = "";
+    if(isset($_POST['inputmitarbeiter'])) $inputmitarbeiter = $_POST['inputmitarbeiter'];
+    break;
     default:
         if(!check_var('login')){
             $title = "Login";
