@@ -31,7 +31,7 @@
 			Ausbildung
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="?site=fst_add">FST eintragen</a>
+        <a class="dropdown-item" href="?site=fst_add">FST's</a>
       </div>
     </li>
       <?php } ?>

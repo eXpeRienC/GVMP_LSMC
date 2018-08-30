@@ -34,8 +34,6 @@ if(!$login) $title = "Login";
 
         <title>LSMC - <?php echo $title; ?></title>
 
-
-
         <!-- Bootstrap core CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -81,7 +79,13 @@ if(!$login) $title = "Login";
 				include("verwaltung.php");
                 break;
                 case 'fst_add':
-                    include("fst_add.php");
+				if($user['rang'] >9) {
+					include("fst_add.php");
+				} else {
+					$arr = array('error' => 'Code04',
+								'site' => 'member');
+					redirect_post("../index.php", $arr);
+				}
                 break;
             }
 

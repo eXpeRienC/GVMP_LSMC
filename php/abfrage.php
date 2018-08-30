@@ -6,8 +6,6 @@ if(isset($_GET['debug']) && $_GET['debug']){
     $debug = false;
 }
 
-
-
 // Binde die Datenbank ein
 include("database.php");
 include('functions.php');
@@ -87,6 +85,14 @@ switch($error){
     break;
     case 'Code11':
         $error_txt = $_POST['mitarbeiter'] . " wurde erfolgreich bearbeitet!";
+        $error_style = "alert-success";
+    break;
+    case 'Code12':
+        $error_txt = $_POST['mitarbeiter'] . " wurde erfolgreich der ".$_POST['fst']."-FST gegeben!";
+        $error_style = "alert-success";
+    break;
+    case 'Code13':
+        $error_txt = $_POST['mitarbeiter'] . " wurde erfolgreich der ".$_POST['fst']."-FST entzogen!";
         $error_style = "alert-success";
     break;
     default:
@@ -203,8 +209,31 @@ switch($site){
         redirect_post("../index.php", $arr);
     break;
     case 'fst_add':
-    var $inputmitarbeiter = "";
-    if(isset($_POST['inputmitarbeiter'])) $inputmitarbeiter = $_POST['inputmitarbeiter'];
+        $title = "FST Übersicht";
+        $db->select('mitarbeiter','*',null,null,'icname ASC');
+        $fstuser = $db->getResult();
+        $db->select('fsts','*');
+        $fstcheck = $db->getResult();
+    break;
+    case "fst_add_save":
+        $inputmitarbeiter = "";
+        $inputfst = "";
+        $inputicname = "";
+        if(isset($_POST['inputmitarbeiter'])) $inputmitarbeiter = $_POST['inputmitarbeiter'];
+        if(isset($_POST['inputicname'])) $inputicname = $_POST['inputicname'];
+        if(isset($_POST['add'])){
+            $inputfst = $_POST['add'];
+            $arr2 = array('userID' => $inputmitarbeiter, 'fst' => $inputfst);
+            $db->insert('fsts',$arr2);
+            $arr = array('error' => 'Code12', 'site' => 'fst_add', 'mitarbeiter' => $inputicname, 'fst' => $inputfst);
+            redirect_post("../index.php", $arr);
+        }
+        if(isset($_POST['delete'])){
+            $inputfst = $_POST['delete'];
+            $db->delete('fsts',"userID = '".$inputmitarbeiter."' AND fst = '".$inputfst."'");
+            $arr = array('error' => 'Code13', 'site' => 'fst_add', 'mitarbeiter' => $inputicname, 'fst' => $inputfst);
+            redirect_post("../index.php", $arr);
+        }
     break;
     default:
         if(!check_var('login')){

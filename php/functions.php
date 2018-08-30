@@ -41,6 +41,34 @@ function check_user($db, $icname){
     }
 }
 
+function check_fst($arr, $ref1, $ref2, $rang=null){
+    if(is_array($arr)){
+        foreach($arr as $k => $v){
+            if($v['userID'] == $ref1){
+                if($v['fst'] == $ref2){
+                    if($rang != null && $rang > 9){
+                        echo '<button type="submit" name="delete" value="'.$ref2.'" class="btn btn-link"><span class="fas fa-check text-success"></span></button>';
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+    if($rang != null && $rang > 9){
+        echo '<button type="submit" name="add" value="'.$ref2.'" class="btn btn-link"/><span class="fas fa-times text-danger"></span></button>';
+        return false;
+    }
+}
+
+function check_all_fst($arr){
+    if(check_fst($arr,"RTW")) return true;
+    if(check_fst($arr,"NEF")) return true;
+    if(check_fst($arr,"TLF")) return true;
+    if(check_fst($arr,"RTH")) return true;
+    if(check_fst($arr,"RTB")) return true;
+    return false;
+}
+
 // Sende Daten als Post auf die neue Seite
 function redirect_post($url, array $data)
 {
